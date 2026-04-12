@@ -26,6 +26,9 @@ A Resume Analyzer built using Natural Language Processing techniques that parses
 5. Generates score + feedback
 
 ---
+## 📦 Installation
+
+pip install -r requirements.txt
 
 ## ▶️ How to Run
 ```bash
