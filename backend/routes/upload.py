@@ -1,9 +1,9 @@
 from fastapi import APIRouter, UploadFile, File, Form
 
-from services.parser import extract_pdf, extract_docx, clean_text
-from services.skill_extractor import extract_skills
-from services.matcher import calculate_match
-from services.scorer import calculate_resume_score
+from backend.services.parser import extract_pdf, extract_docx, clean_text
+from backend.services.skill_extractor import extract_skills
+from backend.services.matcher import calculate_match
+from backend.services.scorer import calculate_resume_score
 
 router = APIRouter()
 
@@ -64,6 +64,8 @@ async def analyze_resume(
 
     if "spring boot" in missing_skills:
         suggestions.append("Build a Spring Boot REST API project")
+    if "Java" in missing_skills:
+        suggestions.append("learning java is essential")
 
     if len(resume_skills) < 5:
         suggestions.append("Add more technical skills to resume")
